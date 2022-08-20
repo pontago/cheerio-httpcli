@@ -78,8 +78,8 @@ declare namespace CheerioHttpcli {
   type IconvMods = 'iconv' | 'iconv-jp' | 'iconv-lite';
   type NumConfigs = 'timeout' | 'maxDataSize';
   type BooleanConfigs = 'gzip' | 'referer' | 'followMetaRefresh' | 'forceHtml' | 'debug';
-  type ObjectConfigs = 'headers' | 'agentOptions';
-  type SpecialConfigs = 'browser' | 'iconv';
+  type ObjectConfigs = 'headers' | 'agentOptions' | 'agent';
+  type SpecialConfigs = 'browser' | 'iconv' | 'proxy';
   type Browsers =
     | 'chrome'
     | 'firefox'
@@ -112,6 +112,9 @@ declare namespace CheerioHttpcli {
   const iconv: string;
   const version: string;
   const download: Download.Manager;
+
+  const agent: FreeObject;
+  const proxy: string;
 
   function reset(): void;
 
@@ -159,6 +162,9 @@ declare namespace CheerioHttpcli {
     debug: boolean;
     browser: string;
     iconv: string;
+
+    agent: FreeObject;
+    proxy: string;
 
     reset(): void;
 
